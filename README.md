@@ -1,2 +1,2 @@
 # Pages
-This repo is the foundation of my [GitHub Page](https://salmaster1.github.io/Pages-Testing/).
+This repo is the foundation of my [Portfolio Page](https://salmaster1.github.io/Pages-Testing/).
