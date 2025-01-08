@@ -4,6 +4,6 @@
 
 This is project 1, the first project in the list  
 
-This is my image  
+This is my image:  
   
-    ![Friend](/assets/Friend.png)
+![Friend](/assets/Friend.png)  
