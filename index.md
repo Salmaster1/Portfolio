@@ -3,11 +3,11 @@
 This is the content of the page
 
 
-   this is code
-      if(yes)
-      {
-         //Do something
-      }
+      this is code  
+         if(yes)  
+         {  
+            //Do something  
+         }  
       
 > And yet, nothing remained
 
