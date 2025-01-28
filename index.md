@@ -31,3 +31,10 @@
 	- Enemies & Enemy Spawning  
 **Download Link:** [itch.io](https://salmaster.itch.io/cowboy-kass-cino-madness)  
 ![Cowboy Kass-Cino Mandess](/assets/CKCMTitle.png)
+
+## Game Jams
+
+### Global Game Jam Gothenburg 2025
+**Name: ** Water Drop Racing
+**Notes: ** Winner of *Best Game Design*
+**Link: ** [Link](https://globalgamejam.org/games/2025/title-5)
