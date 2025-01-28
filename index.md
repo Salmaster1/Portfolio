@@ -35,6 +35,6 @@
 ## Game Jams
 
 ### Global Game Jam Gothenburg 2025
-**Name: ** Water Drop Racing  
-**Notes: ** Winner of *Best Game Design*  
-**Link: ** [Link](https://globalgamejam.org/games/2025/title-5)
+**Name:** Water Drop Racing  
+**Notes:** Winner of *Best Game Design*  
+**Link:** [Link](https://globalgamejam.org/games/2025/title-5)
