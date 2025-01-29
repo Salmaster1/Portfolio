@@ -183,8 +183,7 @@ During the development process, the programming that I mainly focused on was the
     }
 
 
-</code>
-</pre>
+  </code></pre>
 </details>
 
 Here is some more raw text that I hope is **not** placed in the code block.
