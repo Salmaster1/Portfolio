@@ -139,7 +139,7 @@ Grabable GetClosestGrabable()
                 shortestSqrDistance = sqrDist;
                 throwable = item;
                 // Prioritize ledges if can be grabbed
-                if (item.GetComponent<Ledge>() && PlayerMovement.Instance.transform.position.y < item.transform.position.y) break;
+                if (item.GetComponent\<Ledge>() && PlayerMovement.Instance.transform.position.y < item.transform.position.y) break;
                 // Prioritize head
                 if (item.CompareTag("Head")) break;
             }
@@ -169,6 +169,7 @@ Vector2 GetCalculatedPosition(float velocity, Vector2 direction, float time)
     float y = currentThrowable.transform.position.y + direction.y * velocity * time - 9.82f * time * time / 2;
     return new Vector2(x, y);
 }
+
 
   </pre>
 </details>
