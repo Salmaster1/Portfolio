@@ -9,7 +9,7 @@ During this project, my role was as a programmer, and the game was developed in 
 During the development process, the programming that I mainly focused on was the player character, the signal-button logic, and the system for grabable items.
 
 <details>
-
+  <pre>
 
 ```csharp
 public class MyClass
@@ -22,7 +22,7 @@ public class MyClass
 ```
 
 
-
+  </pre>
 </details>
 
 Here is some more raw text that I hope is **not** placed in the code block.
