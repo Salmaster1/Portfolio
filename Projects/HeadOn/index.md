@@ -231,15 +231,15 @@ public class Throwable : Grabable
 
     private void Awake()
     {
-        Rigidbody = GetComponent<Rigidbody2D>();
-        col = GetComponent<Collider2D>();
-        if(!TryGetComponent<ParticleSystem>(out ps))
+        Rigidbody = GetComponent&#60;Rigidbody2D&#62;();
+        col = GetComponent&#60;Collider2D&#62;();
+        if(!TryGetComponent&#60;ParticleSystem&#62;(out ps))
         {
-            ps = GetComponentInChildren<ParticleSystem>();
+            ps = GetComponentInChildren&#60;ParticleSystem&#62;();
         }
 
         defaultParent = transform.parent;
-        cameraMovement = Camera.main.GetComponent<CameraMovement>();
+        cameraMovement = Camera.main.GetComponent&#60;CameraMovement&#62;();
         if(gameObject.CompareTag("Head"))
         {
             Head = this;
