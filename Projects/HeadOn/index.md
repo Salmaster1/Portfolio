@@ -410,3 +410,82 @@ public class Transmitter
 }
   </pre>
 </details>
+
+In this script, there are two MonoBehaviours, hoever, since they are marked as *abstract*, it does not matter, since no instances of theese classes can be many anyway.
+
+These classes are built around inheritance, and the idea is that every objet that can send a signal inherits from (or in other ways uses) the SignalTransmitter class. Likewise, any class that is supposed to recieve a signal must inherit from- or use the SignalReciever class.
+
+The most basic implementation of a signal reciever used in the project is like the following:
+
+<details><summary>BasicReciever.cs</summary>
+  <pre>
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class BasicReciever : SignalReciever
+{
+    public override void RecieveSignal()
+    {
+        bool active = true;
+        foreach (var source in sources)
+        {
+            if(source.Source.GetSignalState() != source.ActiveState)
+            {
+                active = false;
+                break;
+            }
+        }
+
+        state ??= !active;
+
+        if (state != active)
+        {
+            if (active)
+            {
+                state = true;
+                if(onSignalActivated.GetPersistentEventCount() &#62; 0)
+                    onSignalActivated.Invoke();
+            }
+            else
+            {
+                state = false;
+                if (onSignalDeactivated.GetPersistentEventCount() &#62; 0)
+                    onSignalDeactivated.Invoke();
+            }
+        }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if((sources == null) || (sources != null && sources.Length == 0))
+        {
+            return;
+        }
+
+        foreach (var source in sources)
+        {
+            if (source.Source != null)
+            {
+                if (source.ActiveState)
+                {
+                    Gizmos.color = Color.green;
+                }
+                else
+                {
+                    Gizmos.color = Color.red;
+                }
+
+                Gizmos.DrawLine(transform.position, source.Source.transform.position);
+            }
+        }
+    }
+}
+  </pre>
+</details>
+
+Pretty much every single signal reciever ever used in the game is a BasicReciever, because while it is basic it is extremely flexible.
+Since I was using UnityEvents for this system, giving them the **[SerializeField]** attribute exposes the event in the Unity inspector, making it possible to add listeners outside of the playmode runtime.
+
+In adittion, for ease of use, I also use the **OnDrawGizmosSelected()** Unity Message to make each basic reciever draw a line towards each of the reciever's transmission sources.
