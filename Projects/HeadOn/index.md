@@ -11,7 +11,6 @@ During the development process, the programming that I mainly focused on was the
 <details>
   <pre>
 
-```csharp
 public class MyClass
 {
     public void MyFunc
@@ -19,9 +18,6 @@ public class MyClass
         int myVariable = 5;
     }
 }
-```
-
-
   </pre>
 </details>
 
