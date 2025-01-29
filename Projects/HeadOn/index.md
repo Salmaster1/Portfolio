@@ -11,10 +11,10 @@ During the development process, the programming that I mainly focused on was the
 ```csharp
 public class MyClass
 {
-	public void MyFunc
-	{
-		int myVariable = 5;
-	}
+    public void MyFunc
+    {
+        int myVariable = 5;
+    }
 }
 ```
 
