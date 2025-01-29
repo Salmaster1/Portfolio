@@ -8,10 +8,10 @@ During this project, my role was as a programmer, and the game was developed in 
 
 During the development process, the programming that I mainly focused on was the player character, the signal-button logic, and the system for grabable items.
 
+<details>
+
 ```csharp  
   
-public class MyCode
-{
     private void TryGrabObject(bool requireClick)  
     {  
           Grabable g = GetClosestGrabable();  
@@ -171,7 +171,6 @@ public class MyCode
         {
             return maxThrowForceModifier;
         }
-
         return maxThrowForceModifier;
     }
 
@@ -181,8 +180,9 @@ public class MyCode
         float x = currentThrowable.transform.position.x + direction.x * velocity * time;
         float y = currentThrowable.transform.position.y + direction.y * velocity * time - 9.82f*time*time/2;
 
-    return new Vector2(x, y);  
+        return new Vector2(x, y);  
     }
-}  
 
 ```
+
+</details>
