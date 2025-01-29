@@ -4,6 +4,3 @@ description: Behold, the result of my work...
 
 include:
   - assets
-
-markdown: kramdown
-highlighter: rouge

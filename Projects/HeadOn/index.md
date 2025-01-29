@@ -9,13 +9,11 @@ During this project, my role was as a programmer, and the game was developed in 
 During the development process, the programming that I mainly focused on was the player character, the signal-button logic, and the system for grabable items.
 
 <details><summary>PlayerGrabbing.cs (extract)</summary>
-  
+  <pre><code class="language-csharp">
 
-```csharp  
-  
     private void TryGrabObject(bool requireClick)  
     {  
-          Grabable g = GetClosestGrabable();  
+        Grabable g = GetClosestGrabable();  
 
         if (g == null) return;  
   
@@ -183,7 +181,6 @@ During the development process, the programming that I mainly focused on was the
 
         return new Vector2(x, y);  
     }
-
-```
+  </code></pre>
   
 </details>
