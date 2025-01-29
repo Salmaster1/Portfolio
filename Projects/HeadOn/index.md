@@ -9,9 +9,9 @@ During this project, my role was as a programmer, and the game was developed in 
 During the development process, the programming that I mainly focused on was the player character, the signal-button logic, and the system for grabable items.
 
 <details>
-<summary>PlayerGrabbing.cs (excerpt)</summary>  
-  
-       ```csharp  
+<summary>PourLiquid</summary>
+
+ ```csharp
 
         private void TryGrabObject(bool requireClick)  
             {  
@@ -184,6 +184,5 @@ During the development process, the programming that I mainly focused on was the
 
                 return new Vector2(x, y);  
             }  
-        ```  
-
+```
 </details>
