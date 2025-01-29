@@ -14,11 +14,8 @@ During the development process, the programming that I mainly focused on was the
 private void TryGrabObject(bool requireClick)
 {
     Grabable g = GetClosestGrabable();
-
     if (g == null) return;
-
     if (requireClick != g.RequireClick) return;
-
     if (g != null && g.GetType() == typeof(Throwable) && grabDelayTimer <= 0)
     {
         if (transform.parent.parent = g.transform) //Unchild player if grabbing box that player is standing on
@@ -71,7 +68,6 @@ public void SetHeldItem(Throwable newThrowable)
     {
         Throw(0, Vector2.down);
     }
-
     if (newThrowable != null)
     {
         currentThrowable = newThrowable;
@@ -98,13 +94,6 @@ public void ForceDrop()
     if (currentThrowable != null)
     {
         Throw(0, Vector2.down);
-        // foreach (var item in arms)
-        // {
-        //     item.RestoreArms();
-        //     item.Joint.enabled = true;
-        //     item.Renderer.enabled = true;
-        //     item.Rigidbody.bodyType = RigidbodyType2D.Dynamic;
-        // }
     }
 }
 
@@ -116,15 +105,11 @@ private void Throw(float force, Vector2 direction)
     currentGrabable = null;
     carrying = false;
     aiming = false;
-    //Cursor.visible = true;
     currentForce = 0;
     playerMovement.SetMovementStatus(carrying, aiming);
     heldItemRenderer.enabled = false;
     grabDelayTimer = 0.7f;
-
     EnableArms();
-    //playerAnimations.SetAnimationMode(AnimationMode.None);
-    //playerAnimations.UpdateAnimation();
     if (force != 0)
     {
         playerMovement.ThrowSFX();
@@ -136,7 +121,6 @@ private void Throw(float force, Vector2 direction)
         playerAnimations.SetAnimationMode(AnimationMode.None);
         playerAnimations.UpdateAnimation();
     }
-    //playerMovement.FlipPlayer(playerMovement.Rb.velocity.x < 0);
 }
 
 Grabable GetClosestGrabable()
@@ -145,7 +129,6 @@ Grabable GetClosestGrabable()
     float shortestSqrDistance = maxPickupDistance * maxPickupDistance;
     Grabable throwable = null;
     Grabable[] thrA = grabablesManager.Grabables.ToArray();
-
     foreach (var item in thrA)
     {
         if (item.gameObject.activeInHierarchy && item.enabled)
@@ -155,12 +138,10 @@ Grabable GetClosestGrabable()
             {
                 shortestSqrDistance = sqrDist;
                 throwable = item;
-
                 // Prioritize ledges if can be grabbed
                 if (item.GetComponent<Ledge>() && PlayerMovement.Instance.transform.position.y < item.transform.position.y) break;
                 // Prioritize head
                 if (item.CompareTag("Head")) break;
-
             }
         }
     }
@@ -170,8 +151,6 @@ Grabable GetClosestGrabable()
 float GetForceModifier(Vector2 delta)
 {
     //Throws object based on mouse position
-    //return Mathf.Min(delta.magnitude, maxThrowForceModifier);
-
     if (activeInputType == InputType.KeyboardMouse)
     {
         return Mathf.Clamp(delta.magnitude * mouse_forceModifier / maxThrowForceModifier, 3, maxThrowForceModifier);
@@ -180,7 +159,6 @@ float GetForceModifier(Vector2 delta)
     {
         return maxThrowForceModifier;
     }
-
     return maxThrowForceModifier;
 }
 
@@ -189,16 +167,9 @@ Vector2 GetCalculatedPosition(float velocity, Vector2 direction, float time)
     //Calcuates the future position of a throw, using physics formulas for Projectile Motion in 2D space
     float x = currentThrowable.transform.position.x + direction.x * velocity * time;
     float y = currentThrowable.transform.position.y + direction.y * velocity * time - 9.82f * time * time / 2;
-
     return new Vector2(x, y);
 }
-private void SetCarryingTrue()
-{
-    if (currentThrowable == null) return;
-    carrying = true;
-    playerMovement.SetMovementStatus(carrying, aiming);
 
-}
   </pre>
 </details>
 
