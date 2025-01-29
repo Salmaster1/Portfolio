@@ -338,6 +338,7 @@ public class Throwable : Grabable
         Rigidbody.velocity = Vector3.zero;
     }
 }
+
   </pre>
 </details>
 
