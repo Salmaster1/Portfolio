@@ -341,6 +341,8 @@ public class Throwable : Grabable
   </pre>
 </details>
 
+
+
 In this case, since Throwable inherits from Grabable, the grabbing system is also able to recognise Throwable objects as grabable.
 
 ### The Signal System
