@@ -2,7 +2,7 @@
 
 # Head On
 
-Head On was developed during my time at the school Yrgo in gothenburg. The project was a part of our *Game Design* course, here wew were to use our knowledge of game design to create a game. The project was not my idea.
+Head On was developed during my time at the school Yrgo in gothenburg. The project was a part of our *Game Design* course, where we used our knowledge and lessions of game design to create a game. This project was not my idea, but one of my group members.
 
 During this project, my role was as a programmer, and the game was developed in the Unity Game Engine, with the programming lagnuage C#.
 
@@ -415,7 +415,7 @@ In this script, there are two MonoBehaviours, however, since they are marked as 
 
 These classes are built to be inherited from, and the idea is that every objet that can send a signal inherits from (or in other ways uses) the SignalTransmitter class. Likewise, any class that is supposed to recieve a signal must inherit from- or use the SignalReciever class.
 
-The most basic implementation of a signal reciever used in the project is like the following:
+The most generic implementation of a signal reciever used in the project is like the following:
 
 <details><summary>BasicReciever.cs</summary>
   <pre>
