@@ -182,4 +182,7 @@ During the development process, the programming that I mainly focused on was the
         return new Vector2(x, y);  
     }
 
-</code></pre></details>
+
+</code>
+</pre>
+</details>
