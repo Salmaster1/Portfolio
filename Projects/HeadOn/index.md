@@ -182,7 +182,8 @@ During the development process, the programming that I mainly focused on was the
         float x = currentThrowable.transform.position.x + direction.x * velocity * time;
         float y = currentThrowable.transform.position.y + direction.y * velocity * time - 9.82f*time*time/2;
 
-        return new Vector2(x, y);
-    }
-```
+                return new Vector2(x, y);  
+            }  
+        ```  
+
 </details>
