@@ -11,7 +11,7 @@ During the development process, the programming that I mainly focused on was the
 <details>
 <summary>PlayerGrabbing.cs (excerpt)</summary>  
   
-```csharp  
+ ```csharp  
 private void TryGrabObject(bool requireClick)  
     {  
         Grabable g = GetClosestGrabable();  
