@@ -10,7 +10,6 @@ During the development process, the programming that I mainly focused on was the
 
 <details><summary>PlayerGrabbing.cs (extract)</summary>
   <pre><code class="language-csharp">
-
     private void TryGrabObject(bool requireClick)
     {
         Grabable g = GetClosestGrabable();
@@ -192,7 +191,6 @@ During the development process, the programming that I mainly focused on was the
 
         return new Vector2(x, y);
     }
-
   </code></pre>
 </details>
 
