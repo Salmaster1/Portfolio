@@ -411,9 +411,9 @@ public class Transmitter
   </pre>
 </details>
 
-In this script, there are two MonoBehaviours, however, since they are marked as *abstract*, it does not matter, since no instances of theese classes can be many anyway.
+In this script, there are two MonoBehaviours, however, since they are marked as *abstract*, it does not matter, since no instances of these classes can be made anyway.
 
-These classes are built around inheritance, and the idea is that every objet that can send a signal inherits from (or in other ways uses) the SignalTransmitter class. Likewise, any class that is supposed to recieve a signal must inherit from- or use the SignalReciever class.
+These classes are built to be inherited from, and the idea is that every objet that can send a signal inherits from (or in other ways uses) the SignalTransmitter class. Likewise, any class that is supposed to recieve a signal must inherit from- or use the SignalReciever class.
 
 The most basic implementation of a signal reciever used in the project is like the following:
 
