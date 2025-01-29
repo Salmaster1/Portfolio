@@ -87,13 +87,6 @@ public void SetHeldItem(Throwable newThrowable)
         EnableArms();
     }
 }
-public void ForceDrop()
-{
-    if (currentThrowable != null)
-    {
-        Throw(0, Vector2.down);
-    }
-}
 private void Throw(float force, Vector2 direction)
 {
     if (currentThrowable == null) return;
@@ -118,30 +111,6 @@ private void Throw(float force, Vector2 direction)
         playerAnimations.SetAnimationMode(AnimationMode.None);
         playerAnimations.UpdateAnimation();
     }
-}
-Grabable GetClosestGrabable()
-{
-    //Finds the closest throwable that is within range
-    float shortestSqrDistance = maxPickupDistance * maxPickupDistance;
-    Grabable throwable = null;
-    Grabable[] thrA = grabablesManager.Grabables.ToArray();
-    foreach (var item in thrA)
-    {
-        if (item.gameObject.activeInHierarchy && item.enabled)
-        {
-            float sqrDist = (item.transform.position - pickupPoint.position).sqrMagnitude;
-            if (sqrDist < shortestSqrDistance)
-            {
-                shortestSqrDistance = sqrDist;
-                throwable = item;
-                // Prioritize ledges if can be grabbed
-                if (item.GetComponent\<Ledge>() && PlayerMovement.Instance.transform.position.y < item.transform.position.y) break;
-                // Prioritize head
-                if (item.CompareTag("Head")) break;
-            }
-        }
-    }
-    return throwable;
 }
 float GetForceModifier(Vector2 delta)
 {
