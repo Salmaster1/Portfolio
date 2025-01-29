@@ -11,21 +11,23 @@ During the development process, the programming that I mainly focused on was the
 <details>
 <summary>PlayerGrabbing.cs (excerpt)</summary>  
   
- ```csharp  
-private void TryGrabObject(bool requireClick)  
-    {  
-        Grabable g = GetClosestGrabable();  
+       ```csharp  
+
+        private void TryGrabObject(bool requireClick)  
+            {  
+                Grabable g = GetClosestGrabable();  
           
-        if (g == null) return;  
+                if (g == null) return;  
           
-        if (requireClick != g.RequireClick) return;  
+                if (requireClick != g.RequireClick) return;  
           
-        if (g != null && g.GetType() == typeof(Throwable) && grabDelayTimer <= 0)  
-        {  
-            if (transform.parent.parent = g.transform) //Unchild player if grabbing box that player is standing on  
-                transform.parent.parent = null;  
-            SetHeldItem((Throwable)g);  
-        }  
+                if (g != null && g.GetType() == typeof(Throwable) && grabDelayTimer <= 0)  
+                {  
+                    if (transform.parent.parent = g.transform) //Unchild player if grabbing box that player is standing on  
+                        transform.parent.parent = null;  
+                    SetHeldItem((Throwable)g);  
+                }  
+
         else if (g != null)  
         {  
             //Ledge grab  
