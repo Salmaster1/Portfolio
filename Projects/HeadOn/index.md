@@ -12,26 +12,26 @@ During the development process, the programming that I mainly focused on was the
 <summary>PlayerGrabbing.cs (excerpt)</summary>
 
 ```csharp  
-private void TryGrabObject(bool requireClick)
-    {
-        Grabable g = GetClosestGrabable();
-
-        if (g == null) return;
-
-        if (requireClick != g.RequireClick) return;
-
-        if (g != null && g.GetType() == typeof(Throwable) && grabDelayTimer <= 0)
-        {
-            if (transform.parent.parent = g.transform) //Unchild player if grabbing box that player is standing on
-                transform.parent.parent = null;
-            SetHeldItem((Throwable)g);
-        }
-        else if (g != null)
-        {
-            //Ledge grab
-            if (activeInputType == InputType.Controller && grabDelayTimer <= 0)
-            {
-                grabDelayTimer = 0.2f;
+private void TryGrabObject(bool requireClick)  
+    {  
+        Grabable g = GetClosestGrabable();  
+          
+        if (g == null) return;  
+          
+        if (requireClick != g.RequireClick) return;  
+          
+        if (g != null && g.GetType() == typeof(Throwable) && grabDelayTimer <= 0)  
+        {  
+            if (transform.parent.parent = g.transform) //Unchild player if grabbing box that player is standing on  
+                transform.parent.parent = null;  
+            SetHeldItem((Throwable)g);  
+        }  
+        else if (g != null)  
+        {  
+            //Ledge grab  
+            if (activeInputType == InputType.Controller && grabDelayTimer <= 0)  
+            {  
+                grabDelayTimer = 0.2f;  
                 if (currentGrabable != null)
                 {
                     currentGrabable.ToggleGrabableVisual(false);
