@@ -8,6 +8,10 @@ During this project, my role was as a programmer, and the game was developed in 
 
 During the development process, the programming that I mainly focused on was the player character, the signal-button logic, and the system for grabable items.
 
+## My Work
+
+The player character in **Head On** is able to pick up and grab various items throughout the game. The following is an excerpt from the *PlayerGrabbing* class:
+
 <details><summary>PlayerGrabbing.cs (excerpt)</summary>
   <pre>
 
@@ -61,6 +65,7 @@ private void TryGrabObject(bool requireClick)
         playerAnimations.UpdateAnimation();
     }
 }
+
 public void SetHeldItem(Throwable newThrowable)
 {
     if (carrying)
@@ -87,6 +92,7 @@ public void SetHeldItem(Throwable newThrowable)
         EnableArms();
     }
 }
+
 private void Throw(float force, Vector2 direction)
 {
     if (currentThrowable == null) return;
@@ -112,6 +118,7 @@ private void Throw(float force, Vector2 direction)
         playerAnimations.UpdateAnimation();
     }
 }
+
 float GetForceModifier(Vector2 delta)
 {
     //Throws object based on mouse position
@@ -125,6 +132,7 @@ float GetForceModifier(Vector2 delta)
     }
     return maxThrowForceModifier;
 }
+
 Vector2 GetCalculatedPosition(float velocity, Vector2 direction, float time)
 {
     //Calcuates the future position of a throw, using physics formulas for Projectile Motion in 2D space
@@ -135,4 +143,198 @@ Vector2 GetCalculatedPosition(float velocity, Vector2 direction, float time)
   </pre>
 </details>
 
-Here is some more raw text that I hope is **not** placed in the code block.
+This code, in turn, can be used to grab any **Grabable** objects, and is also able to pick up, carry and throw any **Throwable** objects.
+
+<details><summary>Grabable.cs</summary>
+  <pre>
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public abstract class Grabable : MonoBehaviour
+{
+    [SerializeField] bool requireClickToGrab = true;
+    public bool RequireClick { get { return requireClickToGrab; } }
+
+    protected Collider2D col;
+    public Collider2D Collider { get { return col; } }
+    public abstract void HoldItem();
+
+    [SerializeField] protected GameObject highlight;
+    
+    private void Start()
+    {
+        if (GrabablesManager.Instance != null && GrabablesManager.Instance.IsInitialized && !GrabablesManager.Instance.Grabables.Contains(this))
+        {
+            GrabablesManager.Instance.Grabables.Add(this);
+        }
+    }
+
+    private void OnEnable()
+    {
+        if (GrabablesManager.Instance != null && GrabablesManager.Instance.IsInitialized && !GrabablesManager.Instance.Grabables.Contains(this))
+        {
+            GrabablesManager.Instance.Grabables.Add(this);
+        }
+    }
+
+    private void OnDisable()
+    {
+        if (GrabablesManager.Instance == null) { return; }
+        GrabablesManager.Instance.Grabables.Remove(this);
+    }
+
+    private void OnDestroy()
+    {
+        if(GrabablesManager.Instance == null) { return; }
+        GrabablesManager.Instance.Grabables.Remove(this);
+    }
+
+    public virtual void ToggleGrabableVisual(bool toggle)
+    {
+        if (highlight != null)
+        {
+            highlight.SetActive(toggle);
+        }
+    }
+}
+  </pre>
+</details>
+
+<details><summary>Throwable.cs</summary>
+  <pre>
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Throwable : Grabable
+{
+    public Rigidbody2D Rigidbody { get; private set; }
+
+    Transform defaultParent;
+    public Transform DefaultParent { get { return defaultParent; } }
+    [SerializeField] AudioClip collisionClip;
+    [SerializeField] float throwRotation = 25;
+    [SerializeField] bool causeCamShake = false;
+    [SerializeField] bool resetOnDeath = false;
+    [SerializeField] float maxShakeAmount = 0.15f;
+    ParticleSystem ps;
+    bool isHeld;
+    public bool IsHeld { get { return isHeld; } }
+    CameraMovement cameraMovement;
+
+    public static Throwable Head {get; private set;}
+
+    private void Awake()
+    {
+        Rigidbody = GetComponent<Rigidbody2D>();
+        col = GetComponent<Collider2D>();
+        if(!TryGetComponent<ParticleSystem>(out ps))
+        {
+            ps = GetComponentInChildren<ParticleSystem>();
+        }
+
+        defaultParent = transform.parent;
+        cameraMovement = Camera.main.GetComponent<CameraMovement>();
+        if(gameObject.CompareTag("Head"))
+        {
+            Head = this;
+        }
+    }
+
+    public override void HoldItem()
+    {
+        if(!enabled)
+        {
+            return;
+        }
+
+        isHeld = true;
+        Rigidbody.bodyType = RigidbodyType2D.Static;
+        col.enabled = false;
+        Rigidbody.simulated = false;
+    }
+
+    public void ThrowItem(float force, Vector2 direction)
+    {
+        isHeld = false;
+        transform.parent = defaultParent;
+        //col.enabled = true;
+        Rigidbody.bodyType = RigidbodyType2D.Dynamic;
+        Rigidbody.simulated = true;
+        Rigidbody.AddTorque(throwRotation * direction.x);
+        Rigidbody.AddForce(force * direction, ForceMode2D.Impulse);
+        Invoke(nameof(EnableCollider), 0.1f);
+    }
+
+    void EnableCollider()
+    {
+        col.enabled=true;
+    }
+
+    public override void ToggleGrabableVisual(bool toggle)
+    {
+        if (ps != null)
+        {
+            if (toggle)
+            {
+                ps.Play();
+            }
+            else
+            {
+                ps.Stop();
+            }
+        }
+
+        if (highlight != null)
+        {
+            highlight.SetActive(toggle);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collisionClip == null)
+        {
+            return;
+        }
+
+        if(collision.relativeVelocity.sqrMagnitude > 0.01f)
+        {
+            AudioManager.Instance.PlayAudio(collisionClip, transform.position);
+            
+            if (causeCamShake)
+            {
+                cameraMovement.CameraShake(Mathf.Clamp(maxShakeAmount*(collision.relativeVelocity.sqrMagnitude*0.01f),0.1f,maxShakeAmount), collision.relativeVelocity);
+            }
+        }
+
+        if(collision.gameObject.CompareTag("Player") && collision.enabled)
+        {
+            //Child player to throwable
+            collision.transform.parent = transform;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player") && collision.enabled)
+        {
+            collision.transform.parent = null;
+        }
+    }
+
+    public void ResetMe()
+    {
+        if (!resetOnDeath || gameObject.CompareTag("Head")) return;
+
+        transform.localPosition = Vector3.zero;
+        transform.eulerAngles = Vector3.zero;
+
+        Rigidbody.angularVelocity = 0f;
+        Rigidbody.velocity = Vector3.zero;
+    }
+}
+  </pre>
+</details>
