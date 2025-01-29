@@ -10,6 +10,8 @@ During the development process, the programming that I mainly focused on was the
 
 ## My Work
 
+### Grabbing & Throwing
+
 The player character in **Head On** is able to pick up and grab various items throughout the game. The following is an excerpt from the *PlayerGrabbing* class:
 
 <details><summary>PlayerGrabbing.cs (excerpt)</summary>
@@ -335,6 +337,73 @@ public class Throwable : Grabable
         Rigidbody.angularVelocity = 0f;
         Rigidbody.velocity = Vector3.zero;
     }
+}
+  </pre>
+</details>
+
+In this case, since Throwable inherits from Grabable, the grabbing system is also able to recognise Throwable objects as grabable.
+
+### The Signal System
+
+The signal system the game uses is based on the classes, SignalReciever and SignalTransmitter
+
+<details><summary>SignalBases.cs</summary>
+  <pre>
+
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.Events;
+
+public abstract class SignalTransmitter : MonoBehaviour
+{
+    protected List&#60;SignalReciever&#62; recievers = new();
+    public List&#60;SignalReciever&#62; Recievers { get { return recievers; } set { recievers = value; } }
+
+    protected bool state;
+
+    public abstract void TransmitSignal();
+
+    public abstract bool GetSignalState();
+}
+
+public abstract class SignalReciever : MonoBehaviour
+{
+    [SerializeField] protected Transmitter[] sources;
+
+    [SerializeField] protected UnityEvent onSignalActivated, onSignalDeactivated;
+
+    protected bool? state = null;
+
+    protected virtual void Start()
+    {
+        if(sources == null || sources.Length == 0) 
+        {
+            return; 
+        }
+
+        foreach (var source in sources)
+        {
+            if(source != null && source.Source != null)
+            {
+                source.Source.Recievers.Add(this);
+            }
+        }
+
+        RecieveSignal();
+    }
+
+    public abstract void RecieveSignal();
+}
+
+
+[System.Serializable]
+public class Transmitter
+{
+    [SerializeField] SignalTransmitter source;
+    public SignalTransmitter Source { get { return source; } }
+
+    [SerializeField] bool activeState = true;
+    public bool ActiveState { get { return activeState; } }
 }
   </pre>
 </details>
