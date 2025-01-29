@@ -61,7 +61,6 @@ private void TryGrabObject(bool requireClick)
         playerAnimations.UpdateAnimation();
     }
 }
-
 public void SetHeldItem(Throwable newThrowable)
 {
     if (carrying)
@@ -88,7 +87,6 @@ public void SetHeldItem(Throwable newThrowable)
         EnableArms();
     }
 }
-
 public void ForceDrop()
 {
     if (currentThrowable != null)
@@ -96,7 +94,6 @@ public void ForceDrop()
         Throw(0, Vector2.down);
     }
 }
-
 private void Throw(float force, Vector2 direction)
 {
     if (currentThrowable == null) return;
@@ -122,7 +119,6 @@ private void Throw(float force, Vector2 direction)
         playerAnimations.UpdateAnimation();
     }
 }
-
 Grabable GetClosestGrabable()
 {
     //Finds the closest throwable that is within range
@@ -147,7 +143,6 @@ Grabable GetClosestGrabable()
     }
     return throwable;
 }
-
 float GetForceModifier(Vector2 delta)
 {
     //Throws object based on mouse position
@@ -161,7 +156,6 @@ float GetForceModifier(Vector2 delta)
     }
     return maxThrowForceModifier;
 }
-
 Vector2 GetCalculatedPosition(float velocity, Vector2 direction, float time)
 {
     //Calcuates the future position of a throw, using physics formulas for Projectile Motion in 2D space
