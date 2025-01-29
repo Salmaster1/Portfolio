@@ -7,35 +7,27 @@ Head On was developed during my time at the school Yrgo in gothenburg. The proje
 During this project, my role was as a programmer, and the game was developed in the Unity Game Engine, with the programming lagnuage C#.
 
 During the development process, the programming that I mainly focused on was the player character, the signal-button logic, and the system for grabable items.
-```csharp
-public class MyCode
-{
-
-}
-```
-
 
 <details>
 <summary>PourLiquid</summary>
 
+```csharp
+public class MyCode
+{
+    private void TryGrabObject(bool requireClick)  
+    {  
+          Grabable g = GetClosestGrabable();  
 
-
- ```csharp
-
-        private void TryGrabObject(bool requireClick)  
-            {  
-                Grabable g = GetClosestGrabable();  
-          
-                if (g == null) return;  
-          
-                if (requireClick != g.RequireClick) return;  
-          
-                if (g != null && g.GetType() == typeof(Throwable) && grabDelayTimer <= 0)  
-                {  
-                    if (transform.parent.parent = g.transform) //Unchild player if grabbing box that player is standing on  
-                        transform.parent.parent = null;  
-                    SetHeldItem((Throwable)g);  
-                }  
+        if (g == null) return;  
+  
+        if (requireClick != g.RequireClick) return;  
+  
+        if (g != null && g.GetType() == typeof(Throwable) && grabDelayTimer <= 0)  
+        {  
+            if (transform.parent.parent = g.transform) //Unchild player if grabbing box that player is standing on  
+                transform.parent.parent = null;  
+            SetHeldItem((Throwable)g);  
+        }  
 
         else if (g != null)  
         {  
@@ -192,6 +184,9 @@ public class MyCode
         float y = currentThrowable.transform.position.y + direction.y * velocity * time - 9.82f*time*time/2;
 
     return new Vector2(x, y);  
+    }
 }  
+
 ```
+
 </details>
