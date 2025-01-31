@@ -15,7 +15,7 @@ During the development process, the programming that I mainly focused on was the
 The player character in **Head On** is able to pick up and grab various items throughout the game. The following is an excerpt from the *PlayerGrabbing* class:
 
 <details><summary>PlayerGrabbing.cs (excerpt)</summary>
-  <pre>
+  <pre><code class="language-csharp">
 
 private void TryGrabObject(bool requireClick)
 {
@@ -142,7 +142,7 @@ Vector2 GetCalculatedPosition(float velocity, Vector2 direction, float time)
     float y = currentThrowable.transform.position.y + direction.y * velocity * time - 9.82f * time * time / 2;
     return new Vector2(x, y);
 }
-  </pre>
+  </code></pre>
 </details>
 
 This code, in turn, can be used to grab any **Grabable** objects, and is also able to pick up, carry and throw any **Throwable** objects.
