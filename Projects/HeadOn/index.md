@@ -4,7 +4,7 @@
 
 Head On was developed during my time at the school Yrgo in gothenburg. The project was a part of our *Game Design* course, where we used our knowledge and lessions of game design to create a game. This project was not my idea, but one of my group members.
 
-During this project, my role was as a programmer, and the game was developed in the Unity Game Engine, with the programming lagnuage C#.
+During this project, my role was as a programmer, and the game was developed in the Unity Game Engine, with the programming language C#.
 
 During the development process, the programming that I mainly focused on was the player character, the signal-button logic, and the system for grabable items.
 
