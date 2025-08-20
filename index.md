@@ -21,16 +21,16 @@
 ## Monkey Paw
 [**About This Game >>**](https://salmaster1.github.io/Portfolio/Projects/MonkeyPaw)
 
-**Project Type:** Practical Course Project
+**Project Type:** Practical Course Project  
 **Development Enviroment:** Unity Engine  
 **Project Length:** 2 Months  
-**Project Date:** May 2025 - Jul 2025
+**Project Date:** May 2025 - Jul 2025  
 **Team Size:** 7 (4 Programmers, 3 Artists)  
 **My Major Contribution(s):**  
-	- Interaction System
-	- Dialogue System
-**Download Link:** [itch.io](https://yrgo-game-creator.itch.io/monkey-paw)
-![Monkey Paw](/assets/MonkeyPaw.png)
+	- Interaction System  
+	- Dialogue System  
+**Download Link:** [itch.io](https://yrgo-game-creator.itch.io/monkey-paw)  
+![Monkey Paw](/assets/MonkeyPaw.png)  
 
 ## Game Jams
 
