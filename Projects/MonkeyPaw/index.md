@@ -361,10 +361,11 @@ Since the StartDialogue function takes an Action, it does not nesessairly have t
 <summary>Test</summary>
 
 ```csharp
+
 void ThisIsMyCode()
 {
 
 }
 
-``` 
+```
 </details>
