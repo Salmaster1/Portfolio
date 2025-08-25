@@ -355,17 +355,3 @@ This class' **OnInteract()** and **OnInteract(UnityEvent callback)** can both be
 The DialogueWindow class has the function *StartDialogue(DialogueData data, Action callback, ...)*.  
 
 Since the StartDialogue function takes an Action, it does not nesessairly have to be a dialogue holder that starts dialogue. In the games intro and tutorial, the tutorial dialogue is called directly from code, and the callback simply is the continued execution of the code.  
-
-
-<details>
-<summary>Test</summary>
-
-```csharp
-
-void ThisIsMyCode()
-{
-
-}
-
-```
-</details>
