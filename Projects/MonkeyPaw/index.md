@@ -144,7 +144,7 @@ The reason I make the prompt recieve the InstanceID is to prevent duplicate inte
 
 ### Dialogue  
 
-The second importals system I made for this game was the dialogue system.  
+The second important system I made for this game was the dialogue system.  
 
 The dialogue in Monkey Paw is based on ScriptableObjects, and I made one called DialogueData.  
 
@@ -230,7 +230,7 @@ Each dialogeEntry contains information such as:
 - What is the character saying
 - Are there any special functions that should be called while they are speaking
 
-The "command" here is special. In most cases, it is completely blank, however in  the game there are several moments where people give you money. This is purely one through the command system, which is in turn called by the dialogue system.
+The "command" here is special. In most cases, it is completely blank, however in  the game there are several moments where, for example, people give you money. This act of "giving money" is purely done through the command system, which is in turn called by the dialogue system.
 
 The DialogueData contains information such as:
 - What lines of dialogue should be written out  
@@ -355,3 +355,16 @@ This class' **OnInteract()** and **OnInteract(UnityEvent callback)** can both be
 The DialogueWindow class has the function *StartDialogue(DialogueData data, Action callback, ...)*.  
 
 Since the StartDialogue function takes an Action, it does not nesessairly have to be a dialogue holder that starts dialogue. In the games intro and tutorial, the tutorial dialogue is called directly from code, and the callback simply is the continued execution of the code.  
+
+
+<details>
+<summary>Test</summary>
+
+```csharp
+void ThisIsMyCode()
+{
+
+}
+
+``` 
+</details>
