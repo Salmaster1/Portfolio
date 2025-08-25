@@ -24,7 +24,7 @@
 **Project Type:** Practical Course Project  
 **Development Enviroment:** Unity Engine  
 **Project Length:** 2 Months  
-**Project Date:** May 2025 - Jul 2025  
+**Project Date:** Apr 2025 - Jun 2025  
 **Team Size:** 7 (4 Programmers, 3 Artists)  
 **My Major Contribution(s):**  
 	- Interaction System  
@@ -34,10 +34,10 @@
 
 ## Game Jams
 
-### Yrgo Game Creator Intenal Game Jam
-**Name:** Cowboy Kass-Cino Madness
-**Notes:** Educational Game Jam held by school.
-**Link:** [Link](https://salmaster.itch.io/cowboy-kass-cino-madness)
+### Yrgo Game Creator Intenal Game Jam  
+**Name:** Cowboy Kass-Cino Madness  
+**Notes:** Educational Game Jam held by school.  
+**Link:** [Link](https://salmaster.itch.io/cowboy-kass-cino-madness)  
 
 ### Global Game Jam Gothenburg 2025
 **Name:** Water Drop Racing  
