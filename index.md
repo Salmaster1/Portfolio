@@ -5,6 +5,7 @@
 
 ## Head On
 [**About This Game >>**](https://salmaster1.github.io/Portfolio/Projects/HeadOn)
+![Head On](/assets/HeadOnTitle.png)  
 
 **Project Type:** Practical Course Project  
 **Development Enviroment:** Unity Engine  
@@ -16,10 +17,10 @@
 	- Button-Door Signal Logic  
 	- Implementation of Animations  
 **Download Link:** [itch.io](https://yrgo-game-creator.itch.io/head-on)  
-![Head On](/assets/HeadOnTitle.png)
 
 ## Monkey Paw
 [**About This Game >>**](https://salmaster1.github.io/Portfolio/Projects/MonkeyPaw)
+![Monkey Paw](/assets/MonkeyPaw.png)  
 
 **Project Type:** Practical Course Project  
 **Development Enviroment:** Unity Engine  
@@ -30,7 +31,16 @@
 	- Interaction System  
 	- Dialogue System  
 **Download Link:** [itch.io](https://yrgo-game-creator.itch.io/monkey-paw)  
-![Monkey Paw](/assets/MonkeyPaw.png)  
+
+## Gravitas
+[**About This Game >>**](https://salmaster1.github.io/Portfolio/Projects/Gravitas)  
+![Gravitas](/assets/Gravitas.png)  
+
+**Project Type:** Personal Side Project  
+**Development Enviroment:** Unity Engine  
+**Project Length:** 1+ Years (ongoing)  
+**Team Size:** 1 (Me)
+**Download Link:** None (yet)  
 
 ## Game Jams
 
