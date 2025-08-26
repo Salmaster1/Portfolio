@@ -37,3 +37,33 @@ The strength of the ball's gravity is determined by the change-bar. By using the
 The ball's velocity through the air is calculated in a way that should in most cases prevent you, the player, from outpacing it, and it should as such always land in front of you (assuming that you shot it forwards).  
 
 The balls themselves are not affected by gravity, neither their own nor the global gravity from Unreal Engine itself. They always fly in a straight line.  
+
+## The Camera
+
+Making a camera is easy. Making a **good** camera is hard.  
+
+The player character in Terminal Velocity was based on the First Person Shooter default pawn. The way I turned it into the third person view shown in the previous screenshot was to simply move the camera object attached to the player and **boom,** third person view.  
+
+Since I had a rotateable player, the camera would simply follow the player as it rotates.  
+
+I attached the camera to the player using a Spring Arm object, which prevents the camera from clipping into solid objects.  
+
+Now, since the game is a racing game, it is vital that the camera does not feel bad. The first step to this was making it so that the camera automatically aligns to the ground beneath the player.  
+If you are in a downwards slope, the camera will angle/tilt itself forward so that you can see the entire slope.  
+Same if you are going up a slope, the camear will tilt back, giving you a better view up.  
+
+## Game Feel
+
+When making the game, I had to ask myself a very inportant question: "*How do you make the player feel they are moving fast?*".  
+
+The average person would just say to actually make the player faster, however that has its own set of problems. A faster player needs a bigger track, and needs enough control over its own speed as to not make the game feel unresponsive and bad. Furthermore, very high speeds may start causing collisions to not register properly between objects.  
+
+The solution I came up with was to have a set of effects that would get emphasized the faster the player is going.  
+
+The following things scale with the player's speed:
+- Camera FOV (limited)
+- The amount of speed-lines (unlimited)
+- Music Volume (limited)
+- Camera position (limited)
+
+With these effects, the player's percieved speed is higher than it otherwise would be.
