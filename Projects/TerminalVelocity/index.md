@@ -26,14 +26,14 @@ In adittion, while airborde, there is no soft-cap of 4000 speed, allowing the pl
 
 The following is a screenshot from the game:  
 
-![Screenshot woo hoo!](/assets/TerminalVelocityCS.png)
+![Screenshot woo hoo!](/assets/TerminalVelocitySS.png)
 
 In the bottom-right corner, there is a change-bar and well as two prompts, RMB and LMB.  
 
 When pressing either button, a gravity ball will be shot towards the in-game crosshair. The ball's polarity is determined by what button shot it: Attract for LMB and Repel for RMB.  
 
-The strength of the ball's gravity is determined by the change-bar. By using the scrollwheel, you can change the strength of balls you shoot. Balls shot at 100% power will have very string gravity over a large area, while a 0% ball will have *extremely* weak gravity over a small area.  
+The strength of the ball's gravity is determined by the change-bar. By using the scrollwheel, you can change the strength of balls you shoot. Balls shot at 100% power will have very strong gravity over a large area, while a 0% ball will have *extremely* weak gravity over a small area.  
 
-The ball's velocity through the air is calculated in a way that should in most cases prevent you, the player, from outpacing it, and it should as such always land in frot of you (assuming that you shot it forwards).  
+The ball's velocity through the air is calculated in a way that should in most cases prevent you, the player, from outpacing it, and it should as such always land in front of you (assuming that you shot it forwards).  
 
 The balls themselves are not affected by gravity, neither their own nor the global gravity from Unreal Engine itself. They always fly in a straight line.  
