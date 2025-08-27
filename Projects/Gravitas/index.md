@@ -122,7 +122,7 @@ All gravityRecievers will have a Rigidbody2D, due to the [RequireComponent] at t
 
 When making movement for a game, most people make a pretty obvious assumption: that down is... well down.  
 
-*But what is that wasn't the case?*  
+*But what if that wasn't the case?*  
 
 Since the player's down can be in any orthogonal direction, its movement code has to reflect that.  
 
