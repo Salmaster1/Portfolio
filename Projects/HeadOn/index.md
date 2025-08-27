@@ -2,7 +2,9 @@
 
 # Head On
 
-Head On was developed during my time at the school Yrgo in gothenburg. The project was a part of our *Game Design* course, where we used our knowledge and lessions of game design to create a game. This project was not my idea, but one of my group members.
+Head On was developed during my time at the school Yrgo in gothenburg. The project was a part of our *Game Design* course, where we used our knowledge and lessions of game design to create a game. This project was not my idea, but one of my group members.  
+
+Head On is a puzzle-platformer, where the player character's head is a seperate object that must be carried around. The game's Camera focuses on the head.  
 
 During this project, my role was as a programmer, and the game was developed in the Unity Game Engine, with the programming language C#.
 
@@ -489,3 +491,82 @@ Pretty much every single signal reciever ever used in the game is a BasicRecieve
 Since I was using UnityEvents for this system, giving them the **[SerializeField]** attribute exposes the event in the Unity inspector, making it possible to add listeners outside of the playmode runtime.
 
 In adittion, for ease of use, I also use the **OnDrawGizmosSelected()** Unity Message to make each basic reciever draw a line towards each of the reciever's transmission sources.
+
+### Animations
+
+In Head-On, I was also primairly responsible for implementing the player's animations into the game.  
+
+All of the player's animations were made in Spline, something I had little experience working with.  
+
+Fortunately I had access to good resources detailing how Spline worked and I managed to get a pretty satisfactory result.  
+
+<details><summary>PlayerAnimations.cs (excerpt)</summary>
+  <pre>
+
+    public void SetAnimation(AnimationType type, bool overrideCurrent)
+    {
+        if(animationOverride)
+        {
+            return;
+        }
+
+        switch (type)
+        {
+            case AnimationType.Idle:
+                if(mode == AnimationMode.Carrying)
+                {
+                    TrySetAnimation(idle_Carrying_Animation, overrideCurrent);
+                }
+                else
+                {
+                    TrySetAnimation(idle_None_Animation, overrideCurrent);
+                }
+                currentAnimationType = type;
+
+                break;
+
+            case AnimationType.Walk:
+                if(mode == AnimationMode.Carrying)
+                {
+                    TrySetAnimation(walk_Carrying_Animation, overrideCurrent);
+                }
+                else if(mode == AnimationMode.None)
+                {
+                    TrySetAnimation(walk_None_Animation, overrideCurrent);
+                }
+                else
+                {
+                    TrySetAnimation(walk_Aiming_Animation, overrideCurrent);
+                }
+                currentAnimationType = type;
+
+                break;
+            case AnimationType.Fall:
+                if (mode == AnimationMode.Carrying)
+                {
+                    TrySetAnimation(fall_Carrying_Animation, overrideCurrent);
+                }
+                else if (mode == AnimationMode.None)
+                {
+                    TrySetAnimation(fall_None_Animation, overrideCurrent);
+                }
+                else
+                {
+                    TrySetAnimation(fall_None_Animation, overrideCurrent);
+                }
+                currentAnimationType = type;
+                break;
+
+            default:
+                break;
+        }
+    }
+
+    private void TrySetAnimation(string animation, bool overrideCurrent)
+    {
+        if (overrideCurrent || animationState.Tracks.Items[0].Animation.Name != animation)
+            animationState.SetAnimation(0, animation, true);
+    }
+
+      </pre>
+</details>
