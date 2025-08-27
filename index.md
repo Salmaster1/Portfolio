@@ -4,8 +4,8 @@
 
 
 ## Head On
-[![Head On](/assets/HeadOnTitle.png)](/Projects/HeadOn)  
-[**About This Game >>**](/Projects/HeadOn)  
+[![Head On](/assets/HeadOnTitle.png)](https://salmaster1.github.io/Portfolio/Projects/HeadOn)  
+[**About This Game >>**](https://salmaster1.github.io/Portfolio/Projects/HeadOn)  
 
 Head on was created during a course with a team of 7 people (3 Programmers, 4 Artists). The game is a 2D puzzle-platfomer where the main gimmic is that the player's head is a seperate object that must be escouret through the world.  
 The game was developed over a period of 2 months, and my main contributions to the game is the player's grabb-throw logic, the signal system for buttons and doors, as well as implementing animations.  
