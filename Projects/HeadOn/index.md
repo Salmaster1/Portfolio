@@ -496,9 +496,9 @@ In adittion, for ease of use, I also use the **OnDrawGizmosSelected()** Unity Me
 
 In Head-On, I was also primairly responsible for implementing the player's animations into the game.  
 
-All of the player's animations were made in Spline, something I had little experience working with.  
+All of the player's animations were made in Spine, something I had little experience working with.  
 
-Fortunately I had access to good resources detailing how Spline worked and I managed to get a pretty satisfactory result.  
+Fortunately I had access to good resources detailing how Spine worked and I managed to get a pretty satisfactory result.  
 
 <details><summary>PlayerAnimations.cs (excerpt)</summary>
   <pre>
