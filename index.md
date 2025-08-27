@@ -4,7 +4,7 @@
 
 
 ## Head On
-![Head On](/assets/HeadOnTitle.png)  
+[![Head On](/assets/HeadOnTitle.png)](https://salmaster1.github.io/Portfolio/Projects/HeadOn)  
 [**About This Game >>**](https://salmaster1.github.io/Portfolio/Projects/HeadOn)  
 
 **Project Type:** Practical Course Project  

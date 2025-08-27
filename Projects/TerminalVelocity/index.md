@@ -13,14 +13,14 @@ Terminal velocity is a racing game where you are a ball that can throw orbs that
 The movement is pretty simple. WASD to move, Space to jump. Thats it.  
 
 There are some more factors that help make the movement feel better. The movement is acceleration-based, and in order to make is easier to turn around, there is a special section of the code that increases your acceleration when accelerating in a direction different from your velocity.  
-What this does is practice is make it easier to change direction when moving.  
+What this does in practice is make it easier to change direction when moving.  
 
 Towards the bottom of the screen, there is a text field that displays the player's horizontal speed.  
 
 The player's velocity is affected by friction, and when the player surpasses a speed of 4000, a secondary speed-reduction system activates, which proportionally reduces the player's speed the higher over 4000 they are. As such, on the ground, the player's max speed is around 5500-6000.  
 
 While in the air, the player has no input, and has (basically) no friction. As such, a well-placed superjump at high velocities can be very rewarding, at the risk of flying way off-target.  
-In adittion, while airborde, there is no soft-cap of 4000 speed, allowing the player to go **much** faster. With the right setup and technique, you can reach an aerial speed of ~20000, sometimes way higher.
+In addition, while airborde, there is no soft-cap of 4000 speed, allowing the player to go **much** faster. With the right setup and technique, you can reach aerial speeds of ~20000, sometimes way higher.
 
 ## The Gravity Balls
 
