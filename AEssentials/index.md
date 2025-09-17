@@ -8,11 +8,8 @@ Singletons are the relatively common programming pattern where you ensure that t
 While there are many ways do make singletons, the following two images show how I decided to create the pattern inside the Unity Game Engine:
 
 (NOTE: Both of these showcases has had their comments and summaries removed to save on image size and improve readability!)  
-<details><summary>Singleton</summary>
-  <pre>
+
 ![Singleton](/assets/AE_Singleton.png)  
-  </pre>
-</details>
 
 ![LazySingletonPersistent](/assets/AE_SingletonLazyPersistent.png)  
 
@@ -35,14 +32,14 @@ My package contains a set of classes that provide different ways of managic obje
 ![URef](/assets/AE_URef.png)  
 
 This class is fundementally simple; it is a wrapper-class. The idea is that it allows me to create a pseudo-reference to any type ever, and while it might not seem very useful, it fills a very important role that opens up more ways to help me make good code.  
-
-
+  
+  
 
 When learning how to make games, one of the common things I learned was that it was bad to destroy objects, as that can cause lag-spikes due to the C# garbage collector. One of the many workarounds is a pattern known as Object-Pooling.  
 
 ![Pool](/assets/AE_Pool.png)  
 
-This class is a way to manage objects in a way that is friendly on memory. By simply calling **Pool.Get()**, you get the first inactive object in the pool and activate it. Also, as you can se, the class contains a handfull of other functions, such as prewarming and trimming.  
+This class is a way to manage objects in a way that is friendly on memory. By simply calling **Pool.Get()**, you get the first inactive object in the pool and activate it. Also, as you can see, the class contains a handful of other functions, such as prewarming and trimming.  
 It should be noted that this class works on C# objects, however if you intend to use this in Unity for MonoBehaviours, there is another version of the class called **MonoPool** which is fundementally the same, but has slight different code as to adhere to the restrictions placed on Monobehaviours.  
 
 # Tweening  
