@@ -1,7 +1,12 @@
 # Portfolio
 
 
+# AEssentials
+[![AEssentials](/assets/AEssentials.png)](https://salmaster1.github.io/Portfolio/AEssentials)  
+[**About This Item >>**](https://salmaster1.github.io/Portfolio/AEssentials)  
 
+**AEssentials** is a Unity Package that I have created that contains a wide variety of different classes and functions that I regularly use in my projects. It contains generic classes that can be used to easily create the underlying logic for greater systems.  
+This page contains only code, however contains some of best work out of a pure programming standpoint.  
 
 ## Head On
 [![Head On](/assets/HeadOnTitle.png)](https://salmaster1.github.io/Portfolio/Projects/HeadOn)  
