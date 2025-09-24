@@ -15,11 +15,17 @@ While there are many ways do make singletons, the following two images show how 
 
 ![LazySingletonPersistent](/assets/AE_SingletonLazyPersistent.png)  
 
+<details><summary>Test</summary>
+  <pre>
+   <img src="/assets/AE_Singleton.png" alt="Singleton">
+  </pre>
+</details>
+
 These showcase the simplest and most complex version of this pattern that I decided to create.  
 
 When a class inherits from **Singleton**, it ensures that there can only be at most one instance of the class in a scene. It also gains an *Instance* property which can be used by any code to locate the class instance.  
 
-While the **LazySingletonPersistent** class is fundementally the same, it has two adittional features that the  Singleton class does not have. The first, and most simple is that the singleton persists between scenes by using the DontDestroyOnLoad() function.  
+While the **LazySingletonPersistent** class is fundementally the same, it has two adittional features that the Singleton class does not have. The first, and most simple is that the singleton persists between scenes by using the DontDestroyOnLoad() function.  
 Secondly, and more importantly, is the fact that the instance can be *lazily initialized*. If a class instance does not exist in the active scene, calling the Instance property causes an instance of the class to be created.  
 
 Another class that has Singleton-like behaviour is the following:  
