@@ -17,7 +17,7 @@ While there are many ways do make singletons, the following two images show how 
 
 <details><summary>Test</summary>
   <pre>
-   <img src="/assets/AE_Singleton.png" alt="Singleton">
+   <img src="https://salmaster1.github.io/Portfolio/AEssentials/assets/AE_Singleton.png" alt="Singleton">
   </pre>
 </details>
 
