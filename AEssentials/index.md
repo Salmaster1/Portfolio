@@ -114,3 +114,26 @@ An example of how to use this tween code could be as follows:
 </details>
 
 This causes the gameObject to smoothly move 7 units along the x-axis, and then move 7 units back, back and forth, forever.
+
+# Driven Variables
+
+**Driven Variables** is a system that I have implemented that is based on a common but powerful pattern.  
+
+The main idea is that certain variable types, such as *int, float, string* etc. are value types. What this means is that it is not possible to create a direct reference to the variable.  
+
+The main problem with this is that if Class1 needs a variable that is in Class2, you run into the issue of Class2 needing to exist in order for Class1 to work.  
+
+Driven Variables aims to solve part of this issue, by delegating variables into ScriptableObject containers.  
+
+Now whenever you might need access to a variable in many locations, instead of continuously needing to make sure that the variable even exists in the first place, you can create a Driven Variable of the same type, and all accessors can operate on this variable without needing to coexist.
+
+AEssentials comes prebuilt with Driven Variables for most, if not all, standard structs in Unity and C#, which includes, but is not limited to: int, float, string, bool, Vector2, Quaternion, byte, and long.  
+
+These ScriptableObjects also have some aditional cuntionality; In the inspector, you can mark your variables as "Read Only", strictly prohibiting external code from changing the value. Objects can also "lock" the variables, restricting set access until all locks have been removed.  
+
+The built-in driven variables also come with unique icons, to help distinguish them from other scriptableObjects:  
+
+![Bool](/assets/Bool.png)![Float](/assets/Float.png)![Int](/assets/Int.png)![Vector2](/assets/Vector2.png)  
+(These icons are for bools, floats, ints, and Vector2 respectively)  
+
+Ultimately, Driven Variables exists to help make more modular and flexible code, whilst remaning clean and efficient.  
