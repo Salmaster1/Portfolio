@@ -129,7 +129,7 @@ Now whenever you might need access to a variable in many locations, instead of c
 
 AEssentials comes prebuilt with Driven Variables for most, if not all, standard structs in Unity and C#, which includes, but is not limited to: int, float, string, bool, Vector2, Quaternion, byte, and long.  
 
-These ScriptableObjects also have some aditional cuntionality; In the inspector, you can mark your variables as "Read Only", strictly prohibiting external code from changing the value. Objects can also "lock" the variables, restricting set access until all locks have been removed.  
+These ScriptableObjects also have some aditional functionality; In the inspector, you can mark your variables as "Read Only", strictly prohibiting code from changing the value. Objects can also "lock" the variables, restricting set access until all locks have been removed.  
 
 The built-in driven variables also come with unique icons, to help distinguish them from other scriptableObjects:  
 
