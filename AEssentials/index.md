@@ -44,7 +44,7 @@ This is a class that functions similairly to the previous Singleton classes, in 
 
 My package contains a set of classes that provide different ways of managic objects and data. One of the more interesting in my opinion is the **Ref** class:
 
-<details><summary>URef</summary>
+<details><summary>Ref</summary>
   <pre>
    <img src="https://salmaster1.github.io/Portfolio/AEssentials/assets/AE_Ref.png" alt="Ref">
   </pre>
