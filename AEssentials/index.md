@@ -42,11 +42,11 @@ This is a class that functions similairly to the previous Singleton classes, in 
 
 ## Object Management
 
-My package contains a set of classes that provide different ways of managic objects and data. One of the more interesting in my opinion is the **URef** class:
+My package contains a set of classes that provide different ways of managic objects and data. One of the more interesting in my opinion is the **Ref** class:
 
 <details><summary>URef</summary>
   <pre>
-   <img src="https://salmaster1.github.io/Portfolio/AEssentials/assets/AE_URef.png" alt="URef">
+   <img src="https://salmaster1.github.io/Portfolio/AEssentials/assets/AE_Ref.png" alt="Ref">
   </pre>
 </details>
 
@@ -67,15 +67,13 @@ It should be noted that this class works on C# objects, however if you intend to
 
 # Tweening  
 
-One package that exists for Unity is called "DOTween". What it does is allow you to "tween" values; changing their value over time.  
-I do not need to use DOTween, because I have made my own version, **ATween**.
-
-ATween is still a part of the AEssentials package, and is actively being worked on, seeing as it is relatively new.
+In programming, there exists the idea of "Tweening", that being the process of changing a value from A to B over a set period of time.  
+While there are several packages out there that do this, the AEssentials package contains my own version, **ATween**.
 
 One of the main problems I encountered while developing this code was value types. How could I change the value of a value type variable from another part of the code?  
-The answer is actually quite simple, and has been mentioned already: the **URef** class.  
+The answer is actually quite simple, and has been mentioned already: the **Ref** class.  
 
-I can create a URef&#60;float&#62;, and then tween the float inside the URef. Since the URef is a class, and as such a reference-type, the internal value-type will still get tweened as expected.  
+I can create a Ref&#60;float&#62;, and then tween the float inside the Ref. Since the Ref is a class, and as such a reference-type, the internal value-type will still get tweened as expected.  
 
 Tweens are created by using extention functions, allowing me to "attach" new functions to already existing types:
 
@@ -113,7 +111,7 @@ An example of how to use this tween code could be as follows:
   </pre>
 </details>
 
-This causes the gameObject to smoothly move 7 units along the x-axis, and then move 7 units back, back and forth, forever.
+This causes the gameObject to smoothly move to position (3, 3), and then move to (1, 1), back and forth, forever.  
 
 # Driven Variables
 
