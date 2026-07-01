@@ -36,7 +36,7 @@ Gravitas is a 2D puzzle-platformer where the player has several tools that allow
 The game is developed soley by me, and I have been working on it on-and-off for about a year (as of writing).  
 The game is in active development and is made in the Unity Engine.
 
-**Download Link:** None (yet)  
+**Download Link:** [itch.io](https://salmaster.itch.io/gravitas)  
 
 ## Terminal Velocity
 [![Terminal Velocity](/assets/TerminalVelocity.png)](https://salmaster1.github.io/Portfolio/Projects/TerminalVelocity)  
@@ -46,7 +46,7 @@ Terminal Velocity is a 3D racing game, where the player is able to shoot orbs th
 The game was created over the course of ~5 Weeks.  
 The game is made in Unreal Engine 5.  
 
-**Download Link:** None (yet)  
+**Download Link:** None
 
 ## Game Jams
 
